@@ -84,7 +84,7 @@ app.post("/api/store", async (req, res) => {
 // ✅ Get all stored data
 app.get("/api/data", async (req, res) => {
   try {
-    const data = await Message.find().sort({ createdAt: -1 });
+    const data = await Message.find().sort({ createdAt: -1 }).limit(2);
 
     res.json({
       count: data.length,
